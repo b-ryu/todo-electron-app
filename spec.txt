@@ -1,0 +1,9 @@
+Projects
+  Users will be able to create, delete, and rearrange long-term projects/assignments/tasks
+  Users can assigns colours to projects
+  Colours codes can be used as a visual flag for planned work on projects
+
+Weekly schedules
+  Users will be able to plan out their weekly schedules
+  Everyday will contain general tasks, project work
+  General tasks can be marked as important

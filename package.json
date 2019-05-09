@@ -1,0 +1,49 @@
+{
+  "name": "todo",
+  "version": "0.1.0",
+  "private": true,
+  "main": "public/electron.js",
+  "build": {
+    "appId": "com.electron.todo",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories":{
+      "buildResources": "assets"
+    }
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.4.1",
+    "electron-is-dev": "^1.0.1",
+    "immutability-helper": "^2.8.1",
+    "moment": "^2.22.2",
+    "react": "^16.5.2",
+    "react-autosize-textarea": "^5.0.0",
+    "react-beautiful-dnd": "^9.0.2",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.5",
+    "redux": "^4.0.0",
+    "styled-components": "^3.4.9"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"SET BROWSER=none&&npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "build -c.extraMetadata.main=build/electron.js",
+    "preelectron-pack": "yarn build"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "electron": "^3.0.2",
+    "electron-builder": "^20.28.4",
+    "wait-on": "^3.0.1"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "author": "Brian Ryu",
+  "homepage": "./",
+  "license": "ISC"
+}
