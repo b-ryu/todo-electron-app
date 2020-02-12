@@ -2,6 +2,7 @@ const electron = window.require('electron');
 const path = window.require('path');
 const fs = window.require('fs');
 
+
 export default class FileService {
   constructor(opts) {
     const userDataPath = (electron.app || electron.remote.app).getPath('userData');
@@ -22,6 +23,7 @@ export default class FileService {
   }
 }
 
+
 const parseDataFile = (filePath, defaults) => {
   try {
     // console.log('Succesfully read file');
@@ -32,5 +34,6 @@ const parseDataFile = (filePath, defaults) => {
     return defaults;
   }
 }
+
 
 //module.exports = FileService;

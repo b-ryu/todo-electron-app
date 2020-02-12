@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import '@fortawesome/fontawesome-free/css/all.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+
+import App from './App';
 import rootReducer from './reducers'
 
+import './index.css';
+import '@fortawesome/fontawesome-free/css/all.css';
+
+
 const store = createStore(rootReducer);
+
 
 ReactDOM.render(
   <Provider store={store}>
@@ -17,4 +19,6 @@ ReactDOM.render(
   </Provider>, 
   document.getElementById('root')
 );
-registerServiceWorker();
+
+
+// registerServiceWorker();

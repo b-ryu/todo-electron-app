@@ -1,11 +1,13 @@
-const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+const ID_LENGTH = 20;
 
-const idLength = 20;
 
 export default () => {
-  var newID = '';
-  for (var i = 0; i < idLength; ++i) {
-    newID += chars.charAt(Math.floor(Math.random() * chars.length));
+  let newID = '';
+
+  for (var i = 0; i < ID_LENGTH; ++i) {
+    newID += CHARS.charAt(Math.floor(Math.random() * CHARS.length));
   }
+
   return newID;
 }

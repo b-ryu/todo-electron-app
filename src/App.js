@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
-import { rearrangeProjects } from './reducers/actions'
-
-import ModalProvider from './components/Modals/ModalProvider';
 import { DragDropContext } from 'react-beautiful-dnd'
+import { rearrangeProjects } from './reducers/actions'
 
 import Header from './components/Header';
 import Lists from './components/Lists';
 import Calendar from './components/Calendar';
+import ModalProvider from './components/Modals/ModalProvider';
 
 
 class App extends Component {
