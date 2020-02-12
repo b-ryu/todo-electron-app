@@ -1,14 +1,15 @@
 // Boilerplate copied from https://medium.com/@kitze/%EF%B8%8F-from-react-to-an-electron-app-ready-for-production-a0468ecb1da3
 
-const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
 
+const electron = require('electron');
 const path = require('path');
-const url = require('url');
 const isDev = require('electron-is-dev');
 
+
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
 let mainWindow;
+
 
 function createWindow() {
   mainWindow = new BrowserWindow({width: 900, height: 680});
@@ -16,6 +17,7 @@ function createWindow() {
   mainWindow.on('closed', () => mainWindow = null);
   // mainWindow.setMenu(null);
 }
+
 
 app.on('ready', createWindow);
 
