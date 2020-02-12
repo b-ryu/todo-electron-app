@@ -1,14 +1,17 @@
-import FileService from '../FileService';
 import update from 'immutability-helper';
 
+import FileService from '../FileService';
 import { CalendarActions } from './actions';
 
+
 var moment = require('moment');
+
 
 const CalendarFile = new FileService({
   fileName: 'calendar',
   defaults: { state: { weeks: [] } }
 });
+
 
 const getInitialCalendarState = () => {
   var result = CalendarFile.get('state');
@@ -23,16 +26,21 @@ const getInitialCalendarState = () => {
   return update(result, { active: { $set: { weekIndex, dayIndex } } });
 }
 
+
 const saveCalendarState = state => {
   CalendarFile.set('state', { weeks: state.weeks });
 }
+
 
 const CalendarReducer = (state = getInitialCalendarState(), action) => {
   switch(action.type) {
     case(CalendarActions.EDIT): {
       const weekIndex = state.weeks.findIndex(week => week.weekID === action.weekID);
       if (weekIndex !== -1) {
-        const newState = update(state, { weeks: { [weekIndex]: { days: { [action.dayIndex]: { items: { $set: action.items } } } } } });
+        const newState = update(
+          state, 
+          { weeks: { [weekIndex]: { days: { [action.dayIndex]: { items: { $set: action.items } } } } } }
+        );
         saveCalendarState(newState);
         return newState;
       } else {
@@ -75,5 +83,6 @@ const CalendarReducer = (state = getInitialCalendarState(), action) => {
       return state;
   }
 }
+
 
 export default CalendarReducer;

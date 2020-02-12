@@ -1,21 +1,25 @@
-import FileService from '../FileService';
 import update from 'immutability-helper';
 
+import FileService from '../FileService';
 import { ProjectActions } from './actions';
+
 
 const ProjectFile = new FileService({
   fileName: 'projects',
   defaults: { state: [] }
 });
 
+
 const getInitialProjectState = () => {
   const result = ProjectFile.get('state');
   return result;
 }
 
+
 const saveProjectState = state => {
   ProjectFile.set('state', state);
 }
+
 
 const projectReducer = (state = getInitialProjectState(), action) => {
   const index = state.findIndex(project => project.projectID === action.projectID);
@@ -52,5 +56,6 @@ const projectReducer = (state = getInitialProjectState(), action) => {
       return state;
   }
 }
+
 
 export default projectReducer;
