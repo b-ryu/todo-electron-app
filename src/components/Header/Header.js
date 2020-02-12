@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 import monthColors from '../../monthColors';
 
+
 var moment = require('moment');
+
 
 const Container = styled.div`
   width: 100%;
@@ -15,9 +17,11 @@ const Container = styled.div`
   border-bottom: 3px solid white;
 `;
 
+
 const Time = styled.div`
   font-size: 40px;
 `;
+
 
 export default class Header extends Component {
   constructor() {
@@ -32,7 +36,6 @@ export default class Header extends Component {
   }
 
   render() {
-
     const { date = '' } = this.state;
     const headerColor = monthColors[moment().month()];
 

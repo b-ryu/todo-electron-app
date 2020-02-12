@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const ModalContainer = styled.div`
   background-color: white;
   border-radius: 5px;
@@ -12,11 +13,13 @@ export const ModalContainer = styled.div`
   z-index: 100;
 `;
 
+
 export const ModalTitle = styled.div`
   font-size: ${({ small }) => small ? 24 : 30}px;
   margin: 20px 0;
 `;
 ModalTitle.defaultProps = { small: false };
+
 
 export const ModalField = styled.input`
   font-size: 20px;
@@ -26,9 +29,11 @@ export const ModalField = styled.input`
   border-radius: 3px;
 `;
 
+
 export const ModalLabel = styled.label`
   font-size: 16px;
 `;
+
 
 export const ModalButtons = styled.div`
   padding: 20px;
@@ -36,6 +41,7 @@ export const ModalButtons = styled.div`
   justify-content: space-evenly;
   align-items: center;
 `;
+
 
 export const ModalButton = styled.div`
   padding: 10px 20px;

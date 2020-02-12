@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const ProjectContainer = styled.div`
   margin: 10px;
   padding: 10px;
@@ -22,12 +23,14 @@ export const ProjectContainer = styled.div`
   `}
 `;
 
+
 export const ProjectTitle = styled.div`
   word-wrap: break-word;
   width: calc(100% - 75px);
   min-width: 0;
   font-size: 18px;
 `;
+
 
 export const ProjectButtons = styled.div`
   display: flex;

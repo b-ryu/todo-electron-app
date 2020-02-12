@@ -2,6 +2,7 @@ import React from 'react';
 
 import { ModalContainer, ModalTitle, ModalButtons, ModalButton } from './ModalComponents';
 
+
 export default ({ message, onCancel, onConfirm }) => (
   <ModalContainer>
     <ModalTitle small>{message}</ModalTitle>

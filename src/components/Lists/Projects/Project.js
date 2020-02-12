@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
-import { deleteProject } from '../../../reducers/actions';
+import { Draggable } from 'react-beautiful-dnd';
 
+import { deleteProject } from '../../../reducers/actions';
 import { ProjectContainer, ProjectTitle, ProjectButtons } from './projectComponents';
 import ProjectModal from './ProjectModal';
 import ConfirmModal from '../../Modals/ConfirmModal';
 import IconButton from '../../General/IconButton';
 
-import { Draggable } from 'react-beautiful-dnd';
 
 class Project extends Component {
-
   handleView = () => {
     const { openModal, closeModal, value: initialValues } = this.props;
 
@@ -45,7 +43,6 @@ class Project extends Component {
   }
 
   render() {
-
     const { value: { projectID: id, projectName: name }, index } = this.props;
 
     return (
@@ -68,6 +65,7 @@ class Project extends Component {
     );
   }
 }
+
 
 export default connect(
   null,

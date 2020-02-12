@@ -7,10 +7,11 @@ import Title from '../../General/Title';
 import BulletList from '../../General/BulletList';
 import Message from '../../General/Message';
 import IconButton from '../../General/IconButton';
-
 import { activeDay, editWeek } from '../../../reducers/actions';
 
+
 var moment = require('moment');
+
 
 const NextButtonWidth = 50;
 const NextButton = styled.div`
@@ -41,10 +42,12 @@ const NextButton = styled.div`
 `;
 NextButton.defaultProps = { side: 'left' };
 
+
 const DailyItems = styled.div`
   position: relative;
   padding: 10px ${NextButtonWidth + 10}px;
 `;
+
 
 class ToDo extends Component {
   constructor(props) {
@@ -103,11 +106,11 @@ class ToDo extends Component {
   }
  
   render() {
-
     const { items } = this.state;
     const { active: { weekIndex, dayIndex }, calendar } = this.props;
     const currentlyActive = weekIndex !== -1 && dayIndex !== -1;
     var date, isFirstDay, isLastDay, id;
+
     if (currentlyActive) {
       date = calendar[weekIndex].days[dayIndex].date;
       const formattedDate = moment(date).format('MMMM Do');
@@ -164,6 +167,7 @@ class ToDo extends Component {
     );
   }
 }
+
 
 export default connect(
   (state) => ({

@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 
+
 const narrow = (...args) => (
   css`
     @media (max-width: 900px) {
@@ -7,5 +8,6 @@ const narrow = (...args) => (
     }
   `
 );
+
 
 export default narrow;

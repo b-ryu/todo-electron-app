@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
 import { connect } from 'react-redux';
-
 import { compose } from 'redux';
-import ModalConsumer from '../../Modals/ModalConsumer';
+import { Droppable } from 'react-beautiful-dnd';
 
+import ModalConsumer from '../../Modals/ModalConsumer';
 import ListContainer from '../ListContainer';
 import Title from '../../General/Title';
 import Message from '../../General/Message';
@@ -13,7 +12,6 @@ import IconButton from '../../General/IconButton';
 import Project from './Project';
 import ProjectModal from './ProjectModal';
 
-import { Droppable } from 'react-beautiful-dnd';
 
 const ProjectList = styled.div`
   max-height: 300px;
@@ -21,8 +19,8 @@ const ProjectList = styled.div`
   overfloy-y: auto;
 `;
 
-class Projects extends Component {
 
+class Projects extends Component {
   handleNewProject = () => {
     const { openModal, closeModal } = this.props;
 
@@ -32,7 +30,6 @@ class Projects extends Component {
   }
 
   render() {
-
     const { projects = [], openModal, closeModal } = this.props;
 
     return (
@@ -72,6 +69,7 @@ class Projects extends Component {
     );
   }
 }
+
 
 export default connect(
   (state) => ({ projects: state.projects })

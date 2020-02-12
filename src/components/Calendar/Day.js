@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+
 import narrow from '../media';
-
 import { activeDay } from '../../reducers/actions';
-
 import monthColors from '../../monthColors';
 
+
 var moment = require('moment');
+
 
 const Container = styled.div`
   background-color: #56635f;  
@@ -36,6 +37,7 @@ const Container = styled.div`
   `}
 `;
 
+
 const DayHeader = styled.div`
   padding: 5px;
   margin: 2px;
@@ -44,6 +46,7 @@ const DayHeader = styled.div`
   flex-grow: 0;
 `;
 DayHeader.defaultProps = { color: 'red' };
+
 
 const DayList = styled.ul`
   min-height: 30px;
@@ -58,11 +61,13 @@ const DayList = styled.ul`
   word-wrap: break-word;
 `;
 
+
 const DayItem = styled.li`
   font-size: 14px;
   max-width: 100%;
   word-wrap: break-word;
 `;
+
 
 const addTrailingSpaces = num => {
   var spaces = '';
@@ -72,12 +77,14 @@ const addTrailingSpaces = num => {
   return spaces;
 }
 
+
 const concatItem = item => {
   if (item && item.length > 40) {
     return `${item.substring(0, 40)}...`;
   }
   return item;
 }
+
 
 class Day extends Component {
   handleClick = () => {
@@ -87,13 +94,14 @@ class Day extends Component {
   }
 
   render() {
-
     const { date, items = [], dayIndex, weekIndex, isPast, active } = this.props;
     const day = ['Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun'][dayIndex];
     const isActive = weekIndex === active.weekIndex && dayIndex === active.dayIndex;
+    
     var dateHeader = `${day} - ${moment(date).format('MMM D')}`;
-    const month = moment(date).month();
     dateHeader += addTrailingSpaces(Math.max(0, 20 - date.length));
+
+    const month = moment(date).month();
 
     return (
       <Container isActive={isActive} isPast={isPast} onClick={this.handleClick} >
@@ -105,6 +113,7 @@ class Day extends Component {
     )
   }
 };
+
 
 export default connect(
   (state) => ({

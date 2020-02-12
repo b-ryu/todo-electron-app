@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+
 import narrow from '../media';
+
 
 const ListContainer = styled.div`
   position: relative;
@@ -11,5 +13,6 @@ const ListContainer = styled.div`
     width: 100%;
   `}
 `;
+
 
 export default ListContainer;

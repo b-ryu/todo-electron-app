@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import update from 'immutability-helper';
-
 import TextareaAutosize from 'react-autosize-textarea';
+
 
 const Container = styled.div`
   display: flex;
@@ -15,6 +15,7 @@ const Container = styled.div`
     user-select: auto;
   `}
 `;
+
 
 const BulletPoint = styled.div`
   margin-left: 10px;
@@ -28,6 +29,7 @@ const BulletPoint = styled.div`
   }
 `;
 
+
 const Item = styled(TextareaAutosize)`
   background-color: transparent;
   resize: none;
@@ -38,6 +40,7 @@ const Item = styled(TextareaAutosize)`
   font-size: 16px;
   width: 100%;
 `;
+
 
 export default class BulletList extends Component {
   constructor() {
@@ -139,7 +142,6 @@ export default class BulletList extends Component {
   }
 
   render() {
-
     const { items = [], id = '', style, textStyle, viewOnly } = this.props;
     const { focused } = this.state;
 

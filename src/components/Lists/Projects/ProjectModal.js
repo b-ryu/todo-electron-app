@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { editProject, createProject } from '../../../reducers/actions';
 
+import { editProject, createProject } from '../../../reducers/actions';
 import { 
   ModalContainer, 
   ModalTitle, 
@@ -11,8 +11,8 @@ import {
   ModalButton
 } from '../../Modals/ModalComponents'
 import BulletList from '../../General/BulletList';
-
 import makeID from '../../../id';
+
 
 class ProjectModal extends Component {
   constructor(props) {
@@ -44,7 +44,6 @@ class ProjectModal extends Component {
   }
 
   render() {
-
     const { initialValues, viewOnly, onClick } = this.props;
     const { projectName, projectDesc } = this.state;
 
@@ -82,6 +81,7 @@ class ProjectModal extends Component {
     );
   }
 }
+
 
 export default connect(
   null,

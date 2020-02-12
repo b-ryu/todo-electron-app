@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import narrow from '../media';
 
+import narrow from '../media';
 import Day from './Day';
 
+
 var moment = require('moment');
+
 
 const Container = styled.div`
   width: 100%;
@@ -28,6 +30,7 @@ const Container = styled.div`
     }
   `}
 `;
+
 
 const DeleteButton = styled.div`
   margin: 5px;
@@ -54,6 +57,7 @@ const DeleteButton = styled.div`
     opacity: 0.8;
   }
 `;
+
 
 export default class Week extends Component {
   constructor(props) {
@@ -83,7 +87,6 @@ export default class Week extends Component {
   }
 
   render() {
-
     const { days, index } = this.props;
     const { daysPast } = this.state;
     const canDelete = !index && daysPast === 7;

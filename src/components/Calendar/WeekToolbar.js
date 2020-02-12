@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 import makeID from '../../id';
-
 import { createWeek, deleteWeek, activeDay } from '../../reducers/actions';
 
+
 var moment = require('moment');
+
 
 const Container = styled.div`
   display: flex;
@@ -42,12 +43,13 @@ const Button = styled.div`
   `}
 `;
 
+
 class WeekToolbar extends Component {
-  
   handleCreate = () => {
     const { createWeek, lastDate, numOfWeeks, activeDay } = this.props;
     const startOfWeek = lastDate ? moment(lastDate).clone().add(1, 'd') : moment().startOf('isoWeek');
     var dates = [];
+    
     for (var i = 0; i < 7; ++i) {
       dates.push(startOfWeek.clone().add(i, 'd'));
     }
@@ -63,7 +65,6 @@ class WeekToolbar extends Component {
   }
   
   render() {
-
     const { lastDate } = this.props;
 
     return (

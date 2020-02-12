@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+
 const { Provider, Consumer } = React.createContext({});
 export { Consumer };
+
 
 const Window = styled.div`
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
 `;
 
+
 const Contents = styled.div`
   width: 100%;
   height: 100%;
   
-
   overflow-x: hidden;
   overflow-y: auto;
 
   transition: all 0.2s linear;
 `;
+
 
 const Shadow = styled.div`
   position: absolute;
@@ -35,6 +38,7 @@ const Shadow = styled.div`
   `}
 `;
 
+
 const Overlay = styled.div`
   width: 100%;
   height: 100%;
@@ -46,6 +50,7 @@ const Overlay = styled.div`
   pointer-events: initial;
   z-index: 100;
 `;
+
 
 export default class ModalProvider extends Component {
   constructor() {
@@ -77,7 +82,6 @@ export default class ModalProvider extends Component {
   }
 
   render() {
-
     const { active, Component, modalProps } = this.state;
     const modalFunctions = {
       openModal: this.openModal,

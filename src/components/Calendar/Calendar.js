@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import Title from '../General/Title';
 import Week from './Week';
 import WeekToolbar from './WeekToolbar';
-
 import { deleteWeek } from '../../reducers/actions';
+
 
 const Container = styled.div`
   width: 100%;
@@ -14,9 +14,9 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
+
 class Calendar extends Component {
   render() {
-
     const { calendar = [], deleteWeek } = this.props;
     const lastDate = calendar.length ? calendar[calendar.length - 1].days[6].date : undefined;
 
@@ -40,6 +40,7 @@ class Calendar extends Component {
     );
   }
 }
+
 
 export default connect(
   (state) => ({
