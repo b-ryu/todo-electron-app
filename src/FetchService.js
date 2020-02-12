@@ -1,5 +1,5 @@
 /*
-  This app works  with a Node.js Express server hosted at localhost:5000
+  This app works with a Node.js Express server hosted at localhost:5000
   Go to projects/node-servers/todo-server and run "nodemon server.js"
   This will start the Express server and this Electron app can now make calls to it
 */
