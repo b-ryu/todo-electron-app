@@ -7,7 +7,7 @@ export default class FileService {
   constructor(opts) {
     const userDataPath = (electron.app || electron.remote.app).getPath('userData');
     this.path = path.join(userDataPath, opts.fileName + '.json');
-    
+
     this.data = parseDataFile(this.path, opts.defaults);
   }
 
@@ -28,7 +28,7 @@ const parseDataFile = (filePath, defaults) => {
   try {
     // console.log('Succesfully read file');
     return JSON.parse(fs.readFileSync(filePath));
-  } catch(e) {
+  } catch (e) {
     // console.log('Reverted to defaults');
     fs.writeFileSync(filePath, JSON.stringify(defaults));
     return defaults;
