@@ -4,11 +4,11 @@
 
 **To run local development build:**
 
-`yarn install && yarn dev`.
+`yarn install && yarn dev`
 
 **To run production build:**
 
-1. `yarn install && yarn build`.
+1. `yarn install && yarn build`
 2. Open the setup `.exe` file in the `dist` folder.
 3. Open the `todo.exe` in your programs directory.
 
